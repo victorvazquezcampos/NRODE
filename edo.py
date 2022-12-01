@@ -10,7 +10,7 @@ from keras.optimizers import Adam
 matplotlib.use('TkAgg')
 import numpy as np
 import matplotlib.pyplot as plt
-
+#Me base principalmente en el codigo visto en clase 
 class ODEsolver(Sequential):
     loss_tracker = keras.metrics.Mean(name="loss")
 class ODEsolver(Sequential):
@@ -57,7 +57,7 @@ y = [((x*np.sin(x))+(2*np.cos(x))-((2/x)*np.sin(x))) for x in x_testv]
 a = model.predict(x_testv)
 
 plt.grid()
-plt.title('Gráfica red vs analitica')
+plt.title('Gráfica red neuronal vs analitica')
 
 plt.plot(x_testv, a)
 plt.plot(x_testv, y)
