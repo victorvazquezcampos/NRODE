@@ -11,9 +11,9 @@ matplotlib.use('TkAgg')
 import numpy as np
 import matplotlib.pyplot as plt
 #Me base principalmente en el codigo visto en clase 
-class ODEsolver(Sequential):
+class ODEsol(Sequential):
     loss_tracker = keras.metrics.Mean(name="loss")
-class ODEsolver(Sequential):
+class ODEsol(Sequential):
     loss_tracker = keras.metrics.Mean(name="loss")
 
     def train_step(self, data):
@@ -39,13 +39,13 @@ class ODEsolver(Sequential):
         @property
         def metrics(self):
             return [keras.metrics.Mean(name='loss')]
-model = ODEsolver()
+model = ODEsol()
 model.add(Dense(10, activation='tanh', input_shape=(1,)))
 model.add(Dense(1, activation='tanh'))
 model.add(Dense(1, activation='linear'))
 
 model.summary()
-
+#Se fueron probando diferentes valores en x y y para observar como se comportaba
 model.compile(optimizer=RMSprop(), metrics=['loss'])
 tf.keras.layers.Dropout(.25, input_shape=(2,))
 x=tf.linspace(-5,5,2000)
